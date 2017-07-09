@@ -1,29 +1,50 @@
 {
   "name": "flatdoc",
   "description": "Fetch Markdown files and render them as full pages.",
-  "keywords": ["documentation", "markdown"],
+  "keywords": [
+    "documentation",
+    "markdown"
+  ],
   "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
   "version": "0.9.0",
   "repository": {
-     "type": "git",
-     "url": "https://github.com/rstacruz/flatdoc.git"
-   },
+    "type": "git",
+    "url": "https://github.com/rstacruz/flatdoc.git"
+  },
   "scripts": {
+    "build": "NODE_ENV=production webpack --config=webpack.dll.js --config=webpack.config.js",
+    "start": "webpack --config=webpack.dll.js && webpack-dev-server",
     "test": "mocha"
   },
   "main": "flatdoc.js",
   "devDependencies": {
-    "mocha": "1.10.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "1.6.0",
-    "jsdom": "*",
-    "uglify-js": "2.3.6",
-    "stylus": "0.46.3",
-    "nib": "0.9.1",
+    "cheerio": "^1.0.0-rc.2",
     "commander": "1.1.1",
-    "dox": "0.4.3"
+    "css-loader": "^0.28.4",
+    "dox": "0.4.3",
+    "file-loader": "^0.11.2",
+    "highlight.js": "^9.12.0",
+    "jsdom": "*",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
+    "mocha": "1.10.0",
+    "nib": "0.9.1",
+    "style-loader": "^0.18.2",
+    "stylus": "0.46.3",
+    "uglify-js": "2.3.6",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1",
+    "whatwg-fetch": "^2.0.3"
   },
   "engines": {
     "node": "8",
     "npm": "5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
